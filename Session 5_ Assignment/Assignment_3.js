@@ -1,0 +1,5 @@
+/*
+
+Rewrite your previous class to hide its properties
+
+*/
