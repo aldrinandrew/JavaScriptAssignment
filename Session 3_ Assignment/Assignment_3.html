@@ -1,5 +1,5 @@
 /*
-Crheck whether the value entered in email input field is valid, 
+Check whether the value entered in email input field is valid, 
 on pressing submit button and show the error below email field.
 
 */
@@ -23,12 +23,22 @@ on pressing submit button and show the error below email field.
   <div id="email-error" style="color:red; font-size: 12px;">
   </div>
   <br><br><br>
-  <input type="submit" value="Submit">
+  <input id="validate" type="submit" value="Submit">
 </form>
 </body>
 
 <script>
-
+  const element = document.getElementById('validate');
+  element.addEventListener("click", function(x){
+    const regex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/g;
+    const input= document.getElementById('email').value;
+    const validity = regex.test(input);
+    if (!validity){
+      x.preventDefault();
+      document.getElementById("email-error").innerHTML="Invalid email";
+    }
+  });
+  
 </script>
 
 </html>

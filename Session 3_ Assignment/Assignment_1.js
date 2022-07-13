@@ -14,3 +14,4 @@ const student = [{"name": "John Britto", "mark": 90, "department": "ECE" },
 student.forEach(element => {
     console.log(element.mark)  
 });
+
